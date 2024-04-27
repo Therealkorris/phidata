@@ -1,15 +1,24 @@
 from textwrap import dedent
 
 from phi.assistant import Assistant
+from phi.llm.groq import Groq
 from phi.llm.ollama import Ollama
 
+
+# def get_invstment_research_assistant(
+#     #model: str = "llama3-70b-8192",
+#     model: str = Ollama(model="llama3"),
+#     debug_mode: bool = True,
+# ) -> Assistant:
+#     return Assistant(
 def get_invstment_research_assistant(
     model: str = "llama3",
     debug_mode: bool = True,
 ) -> Assistant:
     model = Ollama(model=model)
     return Assistant(
-        name="investment_research_assistant_llama3",
+        name="investment_research_assistant_groq",
+        #llm=Groq(model=model),
         llm=model,
         description="You are a Senior Investment Analyst for Goldman Sachs tasked with producing a research report for a very important client.",
         instructions=[

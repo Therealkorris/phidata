@@ -25,6 +25,8 @@ def restart_assistant():
 def main() -> None:
     # Get LLM Model
     model = (
+        # st.sidebar.selectbox("Select LLM", options=["llama3-70b-8192", "llama3-8b-8192", "mixtral-8x7b-32768"])
+        # or "llama3-70b-8192"
         st.sidebar.selectbox("Select LLM", options=["llama3", "llama3:instruct", "mixtral"])
         or "llama3"
     )
